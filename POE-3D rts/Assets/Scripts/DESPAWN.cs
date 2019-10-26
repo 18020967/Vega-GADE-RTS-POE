@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class DESPAWN : MonoBehaviour
 {
-    GameObject AnimateSpheare;
+    
     private void Start()
     {
         StartCoroutine(Despawn());
     }
+
     [SerializeField]
     private float Delay = 1f;
 

@@ -26,7 +26,7 @@ public class BlueBarbarien : MonoBehaviour
         target = movement.FindClosestEnemy(Enemie,"Wizzard").transform;
         agent.SetDestination(target.position);
 
-        print(target.position);
+
 
         float distance = Vector3.Distance(target.position, transform.position);
         if (distance <= agent.stoppingDistance)

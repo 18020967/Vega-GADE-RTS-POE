@@ -34,7 +34,7 @@ public class RedWizzard : MonoBehaviour
         target = movement.FindClosestEnemy("Wizzard", Enemie).transform;
         agent.SetDestination(target.position);
 
-        print(target.position);
+
 
         float distance = Vector3.Distance(target.position, transform.position);
         if (distance <= agent.stoppingDistance)
