@@ -52,13 +52,42 @@ public class WizzardTeam : MonoBehaviour
     private void Spawn()
     {
         spawnTime = Time.time + SpawnDelay;
-        Instantiate(Prefab, transform.position, transform.rotation);      
+        Instantiate(Prefab, transform.position, transform.rotation);
+        onMageAttack();
+        
     }
     private bool ShouldSpawn()
     {
         return Time.time >= spawnTime;
     }
-   
+
+
+    float blastradius = 4f;
+    GameObject[] EnemiesBlue;
+    GameObject[] EnemiesRed;
+    void onMageAttack()
+    {
+        EnemiesBlue = GameObject.FindGameObjectsWithTag("Blue Team");
+        foreach (GameObject enemie in EnemiesBlue)
+        {
+            UnitStats targetStats = enemie.GetComponent<UnitStats>();
+            if (blastradius >= Vector3.Distance(transform.position, enemie.transform.position))
+            {
+                combat.Attack(targetStats);
+            }
+        }
+
+        EnemiesRed = GameObject.FindGameObjectsWithTag("Red Team");
+        foreach (GameObject enemie in EnemiesRed)
+        {
+            UnitStats targetStats = enemie.GetComponent<UnitStats>();
+            if (blastradius >= Vector3.Distance(transform.position, enemie.transform.position))
+            {
+                combat.Attack(targetStats);
+            }
+        }
+    }
+
 
 
 
