@@ -9,16 +9,15 @@ public class MainUIScript : MonoBehaviour
     public Text BLUEtext;
     public Text GREENtext;
     public Text WorldText;
-    public int WorldResources = 100000;        
+    int WorldResources = 0;        
    
     void Start()
     {
-     
-        
+        WorldResources = 500000;
     }
     private void Update()
     {
-        WorldText.text = WorldResources.ToString();
+       
     }
 
 
@@ -30,7 +29,7 @@ public class MainUIScript : MonoBehaviour
         if (WorldResources > 0)
         {
             redStored += amount;
-            WorldResources -= amount;
+            WorldResources -= 20;            
         }
         
         REDtext.text = "Resources stored : "+redStored.ToString();
@@ -44,7 +43,7 @@ public class MainUIScript : MonoBehaviour
         if (WorldResources > 0)
         {
             blueStored += amount;
-            WorldResources -= amount;
+            WorldResources -= 20;            
         }
 
         BLUEtext.text = "Resources stored : " + blueStored.ToString();
@@ -58,10 +57,28 @@ public class MainUIScript : MonoBehaviour
         if (WorldResources > 0)
         {
             greenStored += amount;
-            WorldResources -= amount;
+            WorldResources -= 20;      
         }
 
         GREENtext.text = "Resources stored : " + greenStored.ToString();
+    }
+
+    public void greenUnitSpawned(int amount)
+    {       
+       greenStored -= amount;
+       GREENtext.text = "Resources stored : " + greenStored.ToString();
+    }
+
+    public void blueUnitSpawned(int amount)
+    {
+        blueStored -= amount;
+        BLUEtext.text = "Resources stored : " + blueStored.ToString();
+    }
+
+    public void redUnitSpawned(int amount)
+    {
+        redStored -= amount;
+        REDtext.text = "Resources stored : " + redStored.ToString();
     }
 
 

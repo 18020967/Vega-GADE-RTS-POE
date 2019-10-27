@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class RedRecGenerator : MonoBehaviour
+public class GreenResourcing : MonoBehaviour
 {
     public MainUIScript resourcer;
 
@@ -10,9 +10,9 @@ public class RedRecGenerator : MonoBehaviour
     {
         if (Time.time > nextActionTime)
         {
-          
             nextActionTime = Time.time + period;
-            resourcer.redRCGenerator(20);
+            resourcer.greenRCGenerator(20);
         }
     }
+
 }
