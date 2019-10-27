@@ -24,6 +24,14 @@ public class Camera : MonoBehaviour
         {
             transform.Translate(new Vector3(0, speed * Time.deltaTime, 0));
         }
+        if (Input.GetAxis("Mouse ScrollWheel")>0f)
+        {
+            transform.Translate(new Vector3(0, 0, (speed * 3) * Time.deltaTime));
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+            transform.Translate(new Vector3(0, 0, -(speed * 3) * Time.deltaTime));
+        }
 
     }
 }

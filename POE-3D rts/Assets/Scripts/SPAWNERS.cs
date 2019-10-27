@@ -51,7 +51,7 @@ public class SPAWNERS : MonoBehaviour
 
                 spawnTime = Time.time + SpawnDelay;
 
-                Instantiate(Prefab, transform.position, transform.rotation);
+                Instantiate(Prefab, transform.position+(GameObject.FindWithTag("helper").transform.position), transform.rotation);
 
 
                 ResourceRemoval.blueUnitSpawned(200);

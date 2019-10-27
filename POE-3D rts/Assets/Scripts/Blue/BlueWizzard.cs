@@ -33,6 +33,7 @@ public class BlueWizzard : MonoBehaviour
 
         target = movement.FindClosestEnemy("Wizzard", Enemie).transform;
         agent.SetDestination(target.position);
+        Debug.DrawLine(gameObject.transform.position, target.transform.position, Color.grey);
 
 
 

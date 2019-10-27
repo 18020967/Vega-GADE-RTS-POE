@@ -22,10 +22,11 @@ public class BlueBarbarien : MonoBehaviour
     }
     void Update()
     {
+      
 
         target = movement.FindClosestEnemy(Enemie,"Wizzard").transform;
         agent.SetDestination(target.position);
-
+        Debug.DrawLine(gameObject.transform.position, target.transform.position, Color.grey);
 
 
         float distance = Vector3.Distance(target.position, transform.position);
@@ -35,6 +36,7 @@ public class BlueBarbarien : MonoBehaviour
             if (targetStats != null)
             {
                 combat.Attack(targetStats);
+                Debug.DrawLine(gameObject.transform.position, target.transform.position, Color.red);
             }
         }
      

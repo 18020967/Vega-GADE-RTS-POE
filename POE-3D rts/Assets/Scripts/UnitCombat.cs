@@ -25,6 +25,7 @@ public class UnitCombat : MonoBehaviour
         {
             targetStats.TakeDamage(myStats.damage.GetValue());
             attackCooldown = 1f / attackSpeed;
+            
         }
         
     }

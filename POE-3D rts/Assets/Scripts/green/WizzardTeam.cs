@@ -34,6 +34,7 @@ public class WizzardTeam : MonoBehaviour
 
         target = movement.FindClosestEnemy("Blue Team", "Red Team").transform;
         agent.SetDestination(target.position);
+        Debug.DrawLine(gameObject.transform.position, target.transform.position, Color.grey);
 
 
 

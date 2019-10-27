@@ -136,5 +136,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 8550060459874320751, guid: fee3ba5fb27efd748ae1c698fe5855d8, type: 3}
-  SpawnDelay: 10
+  SpawnDelay: 7
   ResourceRemoval: {fileID: 0}
