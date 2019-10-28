@@ -9,7 +9,9 @@ public class MovementController : MonoBehaviour
   public GameObject FindClosestEnemy(string team,string team2)
   {
         GameObject closest = null;
-
+        //here the mage finds it target that it wants to attack , 2 sets of code that are compared to eachther 
+        //beacuse there are two other team tags to consider
+        //the two sets of code are compared and then the closest is the one thats the target
 
         GameObject[] gos;
         gos = GameObject.FindGameObjectsWithTag(team);

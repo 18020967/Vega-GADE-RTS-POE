@@ -24,7 +24,9 @@ public class SPAWNERS : MonoBehaviour
       
     }
 
-   
+   //basic script for units to spawn on their respected spawners if there are enough resources of that team
+   //spawning them next to thespawners
+   //this script is used by every spawner 
 
     private void Spawn()
     {

@@ -30,16 +30,17 @@ public class BlueWizzard : MonoBehaviour
     void Update()
     {
 
-
+        //this code makes sure that this game object always targets the enemie closest to it
+        //we do this by using the find closest enemy with tag function since there are 3 teams and 3 tags
         target = movement.FindClosestEnemy("Wizzard", Enemie).transform;
         agent.SetDestination(target.position);
+        //drawing a line betwen the game object and its target to see in the debug scene
         Debug.DrawLine(gameObject.transform.position, target.transform.position, Color.grey);
-
-
 
         float distance = Vector3.Distance(target.position, transform.position);
         if (distance <= agent.stoppingDistance)
         {
+            //when the unit should start attaking is when the target is in range
             if (ShouldSpawn())
             {
                 Spawn();
@@ -51,6 +52,7 @@ public class BlueWizzard : MonoBehaviour
     }
     private void Spawn()
     {
+        //spawns the visuals of the AOE attack of the wizzard
         spawnTime = Time.time + SpawnDelay;
         Instantiate(Prefab, transform.position, transform.rotation);
         onMageAttack();
@@ -67,6 +69,8 @@ public class BlueWizzard : MonoBehaviour
     GameObject[] EnemiesRed;
     void onMageAttack()
     {
+        //here the mage finds it target that it wants to attack , 2 sets of code that are compared to eachther 
+        //beacuse there are two other team tags to consider
         EnemiesBlue = GameObject.FindGameObjectsWithTag(Enemie);
         foreach (GameObject enemie in EnemiesBlue)
         {

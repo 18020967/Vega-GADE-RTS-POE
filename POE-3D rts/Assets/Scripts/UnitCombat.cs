@@ -16,11 +16,14 @@ public class UnitCombat : MonoBehaviour
 
     private void Update()
     {
+        //helping that the unit can only attack every second
         attackCooldown -= Time.deltaTime;
     }
 
     public void Attack (UnitStats targetStats)
     {
+
+        //fighting the unit by getting own stats from stats class and getting stats from enemy stats class
         if (attackCooldown <= 0f)
         {
             targetStats.TakeDamage(myStats.damage.GetValue());

@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+
 
 public class Button : MonoBehaviour
 {
@@ -11,19 +9,13 @@ public class Button : MonoBehaviour
     {
         PlayPause();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
         
-    }
-
-
     public void PlayPause()
     {
-        if (Time.timeScale != 0.001f)
+        //this function playes and pauses the game but it actualy makes time go very very slow
+        if (Time.timeScale != 0.0001f)
         {
-            Time.timeScale = 0.001f;
+            Time.timeScale = 0.0001f;
         }
         else
         {

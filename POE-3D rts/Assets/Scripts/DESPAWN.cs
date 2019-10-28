@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DESPAWN : MonoBehaviour
 {
-    
+    //used to despawn sertain objects that needs despawning
     private void Start()
     {
         StartCoroutine(Despawn());

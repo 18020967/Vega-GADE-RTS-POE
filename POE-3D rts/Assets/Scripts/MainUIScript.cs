@@ -10,6 +10,10 @@ public class MainUIScript : MonoBehaviour
     public Text GREENtext;
     public Text WorldText;
     int WorldResources = 0;        
+
+    //this script is called from each resource generator and adds resources to their team
+    // and removes resourcesd from the world and only allows resources if there are available in the world
+    //it also sisplays the needed data on the UI
    
     void Start()
     {
